@@ -1,10 +1,12 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.reto3.sa.practica.reto3grupo01g8.controller;
 
 import com.reto3.sa.practica.reto3grupo01g8.entity.Clientes;
-
-
-import com.reto3.sa.practica.reto3grupo01g8.service.GamesService;
+import com.reto3.sa.practica.reto3grupo01g8.entity.Reservation;
+import com.reto3.sa.practica.reto3grupo01g8.service.ReservationService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,37 +20,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Daniel
+ * @author jacas
  */
-
 @RestController
-@RequestMapping("/api/games/")
-
-public class GamesController {
-    
+@RequestMapping("/api/reservation/")
+public class ReservationController {
     @Autowired
-    private GamesService service;
+    private ReservationService service;
     
     @GetMapping("/all")
-    public List<Clientes> getClientes(){
-        return service.listClient();
+    public List<Reservation> getReservation(){
+        return service.listReservation();
     }
     
     @PostMapping("/save")
-    public ResponseEntity addClientes(@RequestBody Clientes cliente){
-        service.insertClient(cliente);
+    public ResponseEntity addReservation(@RequestBody Reservation reservation){
+        service.insertReservation(reservation);
         return ResponseEntity.status(201).build();
     }
     
     @PutMapping("/update")
-    public ResponseEntity updateClientes(@RequestBody Clientes cliente){
-        service.updtCliente(cliente);
+    public ResponseEntity updateReservation(@RequestBody Reservation reservation){
+        service.updateReservation(reservation);
         return ResponseEntity.status(201).build();
     }
     
     @DeleteMapping("/delete")
-    public ResponseEntity deleteClientes(@RequestBody Clientes cliente){
-        service.delCliente(cliente.getId());
+    public ResponseEntity deleteReservation(@RequestBody Reservation reservation){
+        service.deleteReservation(reservation.getId());
         return ResponseEntity.status(204).build();
     }
+    
 }
