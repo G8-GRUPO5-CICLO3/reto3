@@ -11,4 +11,5 @@ package com.reto3.sa.practica.reto3grupo01g8.entity;
  */
 public class Games {
     public String name;
+    public int category;
 }
