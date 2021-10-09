@@ -41,13 +41,13 @@ public class GamesService {
     public Games updtGames(Games game){
         Games checkIfExist = repo.findById(game.getId()).orElse(null);
         checkIfExist.setDeveloper   (game.getDeveloper());
-        checkIfExist.setMinage      (game.getMinage());
-        checkIfExist.setCategory_id (game.getCategory_id());
-        checkIfExist.setName        (game.getName());    
+        checkIfExist.setYear        (game.getYear());
+        checkIfExist.setCategory    (game.getCategory());
+        checkIfExist.setName        (game.getName());  
+        checkIfExist.setDescription (game.getDescription());  
         return repo.save(checkIfExist);
     }
     
-    // eliminar cliente
     public String delGames(int id){
         repo.deleteById(id);
         
