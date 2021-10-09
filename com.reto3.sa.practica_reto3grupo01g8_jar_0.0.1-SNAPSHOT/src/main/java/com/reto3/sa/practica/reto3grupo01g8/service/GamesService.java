@@ -5,54 +5,53 @@
  */
 package com.reto3.sa.practica.reto3grupo01g8.service;
 
-import com.reto3.sa.practica.reto3grupo01g8.entity.Clientes;
-import com.reto3.sa.practica.reto3grupo01g8.repository.ClientesRepository;
+import com.reto3.sa.practica.reto3grupo01g8.entity.Games;
+import com.reto3.sa.practica.reto3grupo01g8.repository.GamesRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Omar Gonzalez
+ * @author Grupo 8
  */
 
 @Service
 public class GamesService {
     
+  
     @Autowired
-    private ClientesRepository repo;
+    private GamesRepository repo;
     
     // mostrar todos los clientes
-    public List<Clientes> listClient(){
+    
+    public Games insertGames(Games game){
+        return repo.save(game);
+    }
+     
+    public List<Games> listGame(){
         return repo.findAll();
     }
     
     // mostrar cliente por id
-    public Clientes listClientById(Clientes cliente){
-        return repo.findById(cliente.getId()).orElse(null);
+    public Games listGameById(Games game){
+        return repo.findById(game.getId()).orElse(null);
     }
-    
-    // insert cliente
-    public Clientes insertClient(Clientes cliente){
-        return repo.save(cliente);
-    }
-    
-    // updt cliente
-    public Clientes updtCliente(Clientes cliente){
-        Clientes checkIfExist = repo.findById(cliente.getId()).orElse(null);
-        
-        checkIfExist.setNombre(cliente.getNombre());
-        checkIfExist.setCorreo(cliente.getCorreo());
-        checkIfExist.setEdad(cliente.getEdad());
-        checkIfExist.setPass(cliente.getPass());
-        
+      
+    public Games updtGames(Games game){
+        Games checkIfExist = repo.findById(game.getId()).orElse(null);
+        checkIfExist.setDeveloper   (game.getDeveloper());
+        checkIfExist.setMinage      (game.getMinage());
+        checkIfExist.setCategory_id (game.getCategory_id());
+        checkIfExist.setName        (game.getName());    
         return repo.save(checkIfExist);
     }
     
     // eliminar cliente
-    public String delCliente(int id){
+    public String delGames(int id){
         repo.deleteById(id);
         
-        return "El cliente número " + id + " se ha eliminado";
+        return "El Juego número " + id + " se ha eliminado";
     }
+
 }

@@ -1,10 +1,10 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.reto3.sa.practica.reto3grupo01g8.controller;
 
-import com.reto3.sa.practica.reto3grupo01g8.entity.Clientes;
-
-import com.reto3.sa.practica.reto3grupo01g8.service.ClientesService;
-
+import com.reto3.sa.practica.reto3grupo01g8.entity.Games;
 import com.reto3.sa.practica.reto3grupo01g8.service.GamesService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,37 +19,41 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Daniel
+ * @author Grupo 8
  */
 
 @RestController
-@RequestMapping("/api/games/")
+@RequestMapping("/api/Games/")
 
 public class GamesController {
-    
+   
     @Autowired
     private GamesService service;
     
     @GetMapping("/all")
-    public List<Clientes> getClientes(){
-        return service.listClient();
+    public List<Games> getGames(){
+        return service.listGame();
     }
     
     @PostMapping("/save")
-    public ResponseEntity addClientes(@RequestBody Clientes cliente){
-        service.insertClient(cliente);
+    public ResponseEntity addGames(@RequestBody Games game){
+        service.insertGames(game);
         return ResponseEntity.status(201).build();
     }
-    
+       /* 
     @PutMapping("/update")
-    public ResponseEntity updateClientes(@RequestBody Clientes cliente){
-        service.updtCliente(cliente);
+    public ResponseEntity updateGames(@RequestBody Games Game){
+        service.updtGames(game);
         return ResponseEntity.status(201).build();
     }
-    
+  
+   
     @DeleteMapping("/delete")
-    public ResponseEntity deleteClientes(@RequestBody Clientes cliente){
-        service.delCliente(cliente.getId());
+    public ResponseEntity deleteGames(@RequestBody Games game){
+        service.delGames(game.getId());
         return ResponseEntity.status(204).build();
     }
+     
+
+*/
 }
