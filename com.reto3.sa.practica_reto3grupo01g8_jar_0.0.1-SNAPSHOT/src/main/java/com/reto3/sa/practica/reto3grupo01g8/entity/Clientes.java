@@ -26,14 +26,16 @@ import lombok.NoArgsConstructor;
 
 public class Clientes {
     @Id
-    @GeneratedValue
-    private int id;
+    // @GeneratedValue
+    private int idClient;
     
-    private String nombre;
+    private String name;
     
-    private String correo;
+    private String email;
     
-    private short edad;
+    private short age;
     
-    private String pass;
+    private String password;
+    
+    
 }
