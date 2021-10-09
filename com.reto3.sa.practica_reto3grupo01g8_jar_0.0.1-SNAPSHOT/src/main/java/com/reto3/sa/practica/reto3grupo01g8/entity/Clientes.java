@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 
 public class Clientes {
     @Id
-    // @GeneratedValue
+    @GeneratedValue
     private int idClient;
     
     private String name;
