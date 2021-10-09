@@ -29,7 +29,7 @@ public class ClientesService {
     
     // mostrar cliente por id
     public Clientes listClientById(Clientes cliente){
-        return repo.findById(cliente.getId()).orElse(null);
+        return repo.findById(cliente.getIdClient()).orElse(null);
     }
     
     // insert cliente
@@ -39,12 +39,12 @@ public class ClientesService {
     
     // updt cliente
     public Clientes updtCliente(Clientes cliente){
-        Clientes checkIfExist = repo.findById(cliente.getId()).orElse(null);
+        Clientes checkIfExist = repo.findById(cliente.getIdClient()).orElse(null);
         
-        checkIfExist.setNombre(cliente.getNombre());
-        checkIfExist.setCorreo(cliente.getCorreo());
-        checkIfExist.setEdad(cliente.getEdad());
-        checkIfExist.setPass(cliente.getPass());
+        checkIfExist.setName(cliente.getName());
+        checkIfExist.setEmail(cliente.getEmail());
+        checkIfExist.setAge(cliente.getAge());
+        checkIfExist.setPassword(cliente.getPassword());
         
         return repo.save(checkIfExist);
     }
