@@ -19,37 +19,43 @@ public class ReservationService {
     @Autowired
     private ReservationRepository repo;
     
-    // mostrar todos los clientes
+    // mostrar todos 
     public List<Reservation> listReservation(){
         return repo.findAll();
     }
     
-    // mostrar cliente por id
+    // mostrar  por id
     public Reservation listReservationById(Reservation reservation){
         return repo.findById(reservation.getId()).orElse(null);
     }
     
-    // insert cliente
+    // insert 
     public Reservation insertReservation(Reservation reservation){
         return repo.save(reservation);
     }
     
-    // updt cliente
+    // updt 
     public Reservation updateReservation(Reservation reservation){
-        Reservation checkIfExist = repo.findById(reservation.getId()).orElse(null);
-        
-        checkIfExist.setJuego(reservation.getJuego());
-        checkIfExist.setCliente(reservation.getCliente());
-        checkIfExist.setFechaInicio(reservation.getFechaInicio());
-        checkIfExist.setFechaEntrega(reservation.getFechaEntrega());
-        
-        return repo.save(checkIfExist);
+        Reservation existingReservation=repo.
+                findById(reservation.getId()).orElse(null);
+       existingReservation.setGame(reservation.getGame());
+       return repo.save(existingReservation);
     }
     
-    // eliminar cliente
+    // eliminar 
     public String deleteReservation(int id){
         repo.deleteById(id);
         
-        return "El La reservacion " + id + " se ha eliminado";
+        return "La reservacion " + id + " se ha eliminado";
+    }
+
+    public Reservation getReservationById(int id) {
+        
+        return null;
+        
+    }
+
+    public List<Reservation> getReservations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

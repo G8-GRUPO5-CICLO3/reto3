@@ -4,7 +4,6 @@
  */
 package com.reto3.sa.practica.reto3grupo01g8.controller;
 
-import com.reto3.sa.practica.reto3grupo01g8.entity.Clientes;
 import com.reto3.sa.practica.reto3grupo01g8.entity.Reservation;
 import com.reto3.sa.practica.reto3grupo01g8.service.ReservationService;
 import java.util.List;
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,8 +29,13 @@ public class ReservationController {
     private ReservationService service;
     
     @GetMapping("/all")
-    public List<Reservation> getReservation(){
-        return service.listReservation();
+    public List<Reservation> findAllReservations(){
+        return service.getReservations();
+    }
+    
+    @GetMapping("/reservations/{id}")
+    public Reservation findReservationsId(@PathVariable int id){
+        return service.getReservationById(id);
     }
     
     @PostMapping("/save")
