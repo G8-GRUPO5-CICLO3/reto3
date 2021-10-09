@@ -50,7 +50,7 @@ public class ClientesController {
     
     @DeleteMapping("/delete")
     public ResponseEntity deleteClientes(@RequestBody Clientes cliente){
-        service.delCliente(cliente.getId());
+        service.delCliente(cliente.getIdClient());
         return ResponseEntity.status(204).build();
     }
 }
