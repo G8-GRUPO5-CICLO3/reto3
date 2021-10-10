@@ -5,10 +5,52 @@
  */
 package com.reto3.sa.practica.reto3grupo01g8.service;
 
+import com.reto3.sa.practica.reto3grupo01g8.entity.Message;
+import com.reto3.sa.practica.reto3grupo01g8.repository.MessageRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author Edgar Javier Sanchez
+ * servicios 
+ * 10-10-21
  */
+@Service
 public class MessageService {
     
+    @Autowired
+    private MessageRepository repository;
+    
+     /**
+      * guardar mensajes 
+      */
+    
+    public Message saveMessage(Message message){
+        return repository.save(message);
+    }
+    
+    
+    /**
+     * punto para  mostar los  mensajes 
+     */
+    
+     public List<Message> getMessageAll(){
+         return repository.findAll();
+         
+     }
+     /**
+      * Update parea  actualizar  Mensajes 
+      * @param message
+      * @return 
+      */
+     public Message updateMessage(Message message){
+         Message existeMessage= repository.findById(message.getId()).orElse(null);
+         existeMessage.setMensaje(message.getMensaje());
+         return repository.save(existeMessage);      
+     }
+     
+     
+     
 }
