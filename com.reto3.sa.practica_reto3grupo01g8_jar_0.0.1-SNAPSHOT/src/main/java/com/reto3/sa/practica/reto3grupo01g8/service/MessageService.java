@@ -51,6 +51,12 @@ public class MessageService {
          return repository.save(existeMessage);      
      }
      
+     /**
+      * eliminar mensaje por ID 
+      */
      
-     
+     public String deleteMessage(Integer id ){
+         repository.deleteById(id);
+         return "Mensaje Eliminado" + id;
+     }
 }
