@@ -6,11 +6,14 @@
 package com.reto3.sa.practica.reto3grupo01g8.service;
 
 import com.reto3.sa.practica.reto3grupo01g8.entity.Category;
-import com.reto3.sa.practica.reto3grupo01g8.repository.CCategory;
+import com.reto3.sa.practica.reto3grupo01g8.entity.Clientes;
+import com.reto3.sa.practica.reto3grupo01g8.repository.CategoryRepository;
+import com.reto3.sa.practica.reto3grupo01g8.repository.ClientesRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 /**
  *
  * @author Har
@@ -19,43 +22,33 @@ import org.springframework.stereotype.Service;
 public class CategoryService {
 
     @Autowired
-    private CCategory cCategory;
-
-    // Mostrar todas las categorias
-    public List<Category> getAll() {
-        return cCategory.getAll();
+    private CategoryRepository repo;
+    
+  
+    public List<Category> listCategory(){
+        return repo.findAll();
     }
-
-    // Consutar categoria
-    public Optional<Category> getCategoryxId(int idCategory) {
-        return cCategory.getCategoryxId(idCategory);
+    
+    public Category listCategoryById(Category category){
+        return repo.findById(category.getIdCategory()).orElse(null);
     }
+    
+ 
+    public Category insertCategory(Category category){
+        return repo.save(category);
+    }
+    
 
-    //     Crear categoria
-    public Category save(Category category) {
-            return cCategory.save(category);
-        }
+    public Category updtCategory(Category category){
+        Category checkIfExist = repo.findById(category.getIdCategory()).orElse(null);
+        
+        checkIfExist.setName(category.getName());
+        checkIfExist.setDescripcion(category.getDescripcion());
+        return repo.save(checkIfExist);
+    }
+ 
+    public String delCategory(int id){
+        repo.deleteById(id);
+        return "La categoría número " + id + " se ha eliminado";
+    }
 }
-
-//   ------------------------------------------------------------ 
-//     Crear categoria
-//    public Category crearCategory(Category category) {
-//        return repo.save(category);
-//    }
-//
-//     Actualizar categoriaXidCategory
-//    public Category actualizarCategory(Category category) {
-//        Category existeCategory = repo.findById(category.getIdCategory()).orElse(null);
-//        existeCategory.setName(category.getName());
-//        existeCategory.setDescripcion(category.getDescripcion());
-//
-//        return repo.save(existeCategory);
-//    }
-//
-//    // Eliminar categoria
-//    public String eliminarCategory(int idCategory) {
-//        repo.deleteById(idCategory);
-//
-//        return "La categoria número " + idCategory + " se ha eliminado";
-//    }
-

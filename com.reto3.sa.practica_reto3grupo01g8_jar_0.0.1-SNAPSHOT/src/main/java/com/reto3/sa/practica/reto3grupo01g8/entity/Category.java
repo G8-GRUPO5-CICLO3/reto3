@@ -33,71 +33,15 @@ import lombok.NoArgsConstructor;
 public class Category implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @GeneratedValue 
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue 
     private Integer idCategory;
 
     private String name;
 
     private String descripcion;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Games> games;
-
-    /**
-     * @return the idCategory
-     */
-    public Integer getIdCategory() {
-        return idCategory;
-    }
-
-    /**
-     * @param idCategory the idCategory to set
-     */
-    public void setIdCategory(Integer idCategory) {
-        this.idCategory = idCategory;
-    }
-
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * @return the descripcion
-     */
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    /**
-     * @param descripcion the descripcion to set
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    /**
-     * @return the games
-     */
-    public List<Games> getGames() {
-        return games;
-    }
-
-    /**
-     * @param games the games to set
-     */
-    public void setGames(List<Games> games) {
-        this.games = games;
-    }
+//    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
+//    @JsonIgnoreProperties("category")
+//    private List<Games> games;
 }

@@ -37,5 +37,4 @@ public class Clientes {
     
     private String password;
     
-    
 }

@@ -6,7 +6,9 @@
 package com.reto3.sa.practica.reto3grupo01g8.controller;
 
 import com.reto3.sa.practica.reto3grupo01g8.entity.Category;
+import com.reto3.sa.practica.reto3grupo01g8.entity.Clientes;
 import com.reto3.sa.practica.reto3grupo01g8.service.CategoryService;
+import com.reto3.sa.practica.reto3grupo01g8.service.ClientesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,26 +33,32 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  */
 @RestController
 @RequestMapping("/api/Category/")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+
 public class CategoryController {
 
-    @Autowired
-    private CategoryService categoryService;
-
+     @Autowired
+    private CategoryService service;
+    
     @GetMapping("/all")
-    public List<Category> getCategory() {
-        return categoryService.getAll();
+    public List<Category> getCategory(){
+        return service.listCategory();
     }
-
-    @GetMapping("/{id}")
-    public Optional<Category> getCategoriaxId(@PathVariable("id") int idCategory) {
-        return categoryService.getCategoryxId(idCategory);
-    }
-
+    
     @PostMapping("/save")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Category save(@RequestBody Category category) {
-        return categoryService.save(category);
-//        return ResponseEntity.status(201).build();
+    public ResponseEntity addCategory(@RequestBody Category category){
+        service.insertCategory(category);
+        return ResponseEntity.status(201).build();
+    }
+    
+    @PutMapping("/update")
+    public ResponseEntity updateCategory(@RequestBody Category category){
+        service.updtCategory(category);
+        return ResponseEntity.status(201).build();
+    }
+    
+    @DeleteMapping("/delete")
+    public ResponseEntity deleteCategory(@RequestBody Category category){
+        service.delCategory(category.getIdCategory());
+        return ResponseEntity.status(204).build();
     }
 }
