@@ -39,14 +39,14 @@ public class GamesController {
         service.insertGames(game);
         return ResponseEntity.status(201).build();
     }
-       /* 
+         
     @PutMapping("/update")
-    public ResponseEntity updateGames(@RequestBody Games Game){
+    public ResponseEntity updateGames(@RequestBody Games game){
         service.updtGames(game);
         return ResponseEntity.status(201).build();
     }
   
-   
+  
     @DeleteMapping("/delete")
     public ResponseEntity deleteGames(@RequestBody Games game){
         service.delGames(game.getId());
@@ -54,5 +54,5 @@ public class GamesController {
     }
      
 
-*/
+
 }

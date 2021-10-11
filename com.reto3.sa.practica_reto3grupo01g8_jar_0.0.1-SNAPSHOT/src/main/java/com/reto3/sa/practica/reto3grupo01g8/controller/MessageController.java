@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.reto3.sa.practica.reto3grupo01g8.controller;
 
 import com.reto3.sa.practica.reto3grupo01g8.entity.Message;
@@ -21,10 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Edgar Javier Sanchez
- */
+/*
 @RestController
 @RequestMapping("/api/Message/")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
@@ -47,4 +45,6 @@ public class MessageController {
     public Message save(@RequestBody Message category) {
         return messageService.save(message);
     }
+    
 }
+*/
