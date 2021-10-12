@@ -43,7 +43,7 @@ public class Clientes {
     private String password;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties("message")
+    @JsonIgnoreProperties("client")
     public List<Message> message;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")

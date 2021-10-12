@@ -4,9 +4,9 @@
  */
 package com.reto3.sa.practica.reto3grupo01g8.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -43,9 +43,11 @@ public class Reservation implements Serializable{
 //    public List<Clientes> clientes;
     @ManyToOne
     @JoinColumn(name="clientIdClient")
+    @JsonIgnoreProperties("reservation")
     private Clientes client;
     
     @ManyToOne
     @JoinColumn(name="gamesId")
+    @JsonIgnoreProperties("reservation")
     private Games games;
 }

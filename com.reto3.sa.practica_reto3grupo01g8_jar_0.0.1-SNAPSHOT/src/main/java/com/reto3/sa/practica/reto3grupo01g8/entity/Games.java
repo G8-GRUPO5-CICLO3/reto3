@@ -35,9 +35,10 @@ public class Games {
     private String  developer;
     private int     year;
     
-//    @ManyToOne
-//    @JoinColumn(name="categoryId")
-//    private Category category;
+    @ManyToOne
+    @JoinColumn(name="categoryId")
+    @JsonIgnoreProperties("games")
+    private Category category;
     
     private String  name;
     private String  description;
