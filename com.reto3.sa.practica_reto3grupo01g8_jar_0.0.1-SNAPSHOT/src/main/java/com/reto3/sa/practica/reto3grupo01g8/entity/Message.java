@@ -5,12 +5,16 @@
  */
 package com.reto3.sa.practica.reto3grupo01g8.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +29,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor  
 @Entity 
-@Table(name="message")
+@Table(name="messages")
 
 public class Message {
     
@@ -36,9 +40,11 @@ public class Message {
     
     @ManyToOne
     @JoinColumn(name="clientIdClient")
+    @JsonIgnoreProperties("messages")
     private Clientes client;
     
     @ManyToOne
     @JoinColumn(name="gamesId")
+    @JsonIgnoreProperties("messages")
     private Games games;
 }

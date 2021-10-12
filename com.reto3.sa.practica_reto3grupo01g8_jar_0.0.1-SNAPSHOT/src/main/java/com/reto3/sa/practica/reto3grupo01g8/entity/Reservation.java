@@ -48,4 +48,5 @@ public class Reservation implements Serializable{
     @JoinColumn(name="gamesId")
     @JsonIgnoreProperties("reservation")
     private Games games;
+
 }
