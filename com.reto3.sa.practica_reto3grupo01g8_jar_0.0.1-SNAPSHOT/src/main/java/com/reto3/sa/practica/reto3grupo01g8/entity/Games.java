@@ -44,10 +44,10 @@ public class Games {
     private String  description;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "games")
-    @JsonIgnoreProperties("message")
-    public List<Message> message;
+    @JsonIgnoreProperties("messages")
+    public List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "games")
-    @JsonIgnoreProperties("reservation")
-    public List<Reservation> reservation;
+    @JsonIgnoreProperties("reservations")
+    public List<Reservation> reservations;
 }

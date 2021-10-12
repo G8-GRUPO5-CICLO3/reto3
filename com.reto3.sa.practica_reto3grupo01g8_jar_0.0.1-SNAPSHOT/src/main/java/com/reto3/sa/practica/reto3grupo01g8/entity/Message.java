@@ -31,8 +31,8 @@ public class Message {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private  String mensaje;
+    private int idMessage;
+    private  String messageText;
     
     @ManyToOne
     @JoinColumn(name="clientIdClient")
