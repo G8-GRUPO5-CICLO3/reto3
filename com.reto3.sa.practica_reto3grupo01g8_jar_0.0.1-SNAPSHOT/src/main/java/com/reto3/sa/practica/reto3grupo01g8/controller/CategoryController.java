@@ -58,7 +58,7 @@ public class CategoryController {
     
     @DeleteMapping("/delete")
     public ResponseEntity deleteCategory(@RequestBody Category category){
-        service.delCategory(category.getIdCategory());
+        service.delCategory(category.getId());
         return ResponseEntity.status(204).build();
     }
 }

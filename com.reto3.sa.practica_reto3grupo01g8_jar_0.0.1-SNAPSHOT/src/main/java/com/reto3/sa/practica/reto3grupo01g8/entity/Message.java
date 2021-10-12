@@ -8,6 +8,8 @@ package com.reto3.sa.practica.reto3grupo01g8.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +24,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor  
 @Entity 
-@Table(name="Message")
+@Table(name="message")
 
 public class Message {
     
@@ -31,7 +33,11 @@ public class Message {
     private int id;
     private  String mensaje;
     
+    @ManyToOne
+    @JoinColumn(name="clientIdClient")
+    private Clientes client;
     
-
-    
+    @ManyToOne
+    @JoinColumn(name="gamesId")
+    private Games games;
 }

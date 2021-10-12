@@ -30,7 +30,7 @@ public class CategoryService {
     }
     
     public Category listCategoryById(Category category){
-        return repo.findById(category.getIdCategory()).orElse(null);
+        return repo.findById(category.getId()).orElse(null);
     }
     
  
@@ -40,10 +40,10 @@ public class CategoryService {
     
 
     public Category updtCategory(Category category){
-        Category checkIfExist = repo.findById(category.getIdCategory()).orElse(null);
+        Category checkIfExist = repo.findById(category.getId()).orElse(null);
         
         checkIfExist.setName(category.getName());
-        checkIfExist.setDescripcion(category.getDescripcion());
+        checkIfExist.setDescription(category.getDescription());
         return repo.save(checkIfExist);
     }
  

@@ -35,13 +35,13 @@ public class Category implements Serializable {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue 
-    private Integer idCategory;
+    private int id;
 
     private String name;
 
-    private String descripcion;
+    private String description;
 
-//    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
-//    @JsonIgnoreProperties("category")
-//    private List<Games> games;
+//    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
+//    @JsonIgnoreProperties("games")
+//    public List<Games> games;
 }

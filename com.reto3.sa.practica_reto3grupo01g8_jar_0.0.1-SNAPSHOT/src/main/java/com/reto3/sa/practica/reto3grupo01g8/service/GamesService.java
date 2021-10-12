@@ -42,7 +42,6 @@ public class GamesService {
         Games checkIfExist = repo.findById(game.getId()).orElse(null);
         checkIfExist.setDeveloper   (game.getDeveloper());
         checkIfExist.setYear        (game.getYear());
-        checkIfExist.setCategory    (game.getCategory());
         checkIfExist.setName        (game.getName());  
         checkIfExist.setDescription (game.getDescription());  
         return repo.save(checkIfExist);
