@@ -40,11 +40,11 @@ public class Message {
     
     @ManyToOne
     @JoinColumn(name="clientIdClient")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Clientes client;
     
     @ManyToOne
     @JoinColumn(name="gamesId")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Games games;
 }
