@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.reto3.sa.practica.reto3grupo05g8;
+package com.reto3.sa.practica.reto3grupo05g8.controller;
 import com.reto3.sa.practica.reto3grupo05g8.entity.Category;
 import com.reto3.sa.practica.reto3grupo05g8.entity.Clientes;
 import com.reto3.sa.practica.reto3grupo05g8.service.CategoryService;
@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  *
  * @author Har
  */
-@RestController
+@RestController 
 @RequestMapping("/api/Category/")
 
 public class CategoryController {

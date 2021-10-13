@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.reto3.sa.practica.reto3grupo05g8.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -17,10 +13,11 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.io.Serializable;
 
 /**
  *
- * @author Daniel
+ * @author G8
  */
 
 @Data
@@ -29,30 +26,20 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="client")
 
-public class Clientes {
+public class Clientes implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idClient;
-    
     private String name;
-    
     private String email;
-    
-    private short age;
-    
     private String password;
+    private int age;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties({"client","reservations"})
+    @JsonIgnoreProperties("client")
     public List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties({"client","reservations"})
-    public List<Reservation> reservations;
-    
-//    @ManyToOne
-//    @JoinColumn(name="reservationId")
-//    @JsonIgnoreProperties("clientes")
-//    private List<Reservation> reservation;
-    
+    @JsonIgnoreProperties("client")
+    public List<Reservation> reservations;   
 }

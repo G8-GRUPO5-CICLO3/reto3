@@ -6,6 +6,8 @@
 package com.reto3.sa.practica.reto3grupo05g8.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -28,26 +30,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name="games")
-public class Games {
+public class Games implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String  name;
     private String  developer;
     private int     year;
+    private String  description;
     
     @ManyToOne
     @JoinColumn(name="categoryId")
     @JsonIgnoreProperties("games")
     private Category category;
-    
-    private String  name;
-    private String  description;
-    
+
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "games")
-    @JsonIgnoreProperties("games")
+    @JsonIgnoreProperties({"games","client"})
     public List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "games")
-    @JsonIgnoreProperties("games")
+    @JsonIgnoreProperties({"games","message"})
     public List<Reservation> reservations;
 }

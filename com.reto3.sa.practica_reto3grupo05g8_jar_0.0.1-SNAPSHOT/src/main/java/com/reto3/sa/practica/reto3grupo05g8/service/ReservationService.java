@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author jacas
+ * @author Grupo8
  */
 @Service
 public class ReservationService {

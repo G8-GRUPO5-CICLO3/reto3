@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.reto3.sa.practica.reto3grupo05g8;
+
+package com.reto3.sa.practica.reto3grupo05g8.controller;
 
 import com.reto3.sa.practica.reto3grupo05g8.entity.Clientes;
 import com.reto3.sa.practica.reto3grupo05g8.service.ClientesService;
@@ -20,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Daniel
+ * @author Grupo 8
  */
 
-@RestController
-@RequestMapping("/api/Client/")
+@RestController //("ClientesController")
+@RequestMapping ("/api/Client/")
 
 public class ClientesController {
     
@@ -41,7 +37,7 @@ public class ClientesController {
         service.insertClient(cliente);
         return ResponseEntity.status(201).build();
     }
-    
+    /*
     @PutMapping("/update")
     public ResponseEntity updateClientes(@RequestBody Clientes cliente){
         service.updtCliente(cliente);
@@ -53,4 +49,5 @@ public class ClientesController {
         service.delCliente(cliente.getIdClient());
         return ResponseEntity.status(204).build();
     }
+    */
 }

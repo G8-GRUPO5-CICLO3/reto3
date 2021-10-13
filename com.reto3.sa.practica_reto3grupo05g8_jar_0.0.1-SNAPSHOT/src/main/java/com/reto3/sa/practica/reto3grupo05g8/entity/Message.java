@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.io.Serializable;
 
 /**
  *
@@ -28,7 +29,7 @@ import lombok.NoArgsConstructor;
 @Entity 
 @Table(name="message")
 
-public class Message {
+public class Message implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,13 +37,15 @@ public class Message {
     private  String messageText;
     
     @ManyToOne
-    @JoinColumn(name="clientIdClient")
+    @JoinColumn(name="games_Id")
+    @JsonIgnoreProperties({"messages","reservations"})
+    private Games games;
+    
+    @ManyToOne
+    @JoinColumn(name="client_idClient")
     @JsonIgnoreProperties({"messages","reservations"})
     private Clientes client;
     
-    @ManyToOne
-    @JoinColumn(name="gamesId")
-    @JsonIgnoreProperties({"messages","reservations"})
-    private Games games;
+    
     
 }

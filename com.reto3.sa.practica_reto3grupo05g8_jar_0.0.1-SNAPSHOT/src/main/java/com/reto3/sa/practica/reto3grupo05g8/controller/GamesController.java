@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.reto3.sa.practica.reto3grupo05g8;
+package com.reto3.sa.practica.reto3grupo05g8.controller;
 import com.reto3.sa.practica.reto3grupo05g8.entity.Games;
 import com.reto3.sa.practica.reto3grupo05g8.service.GamesService;
 import java.util.List;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grupo 8
  */
 
-@RestController
+@RestController ("GamesController")
 @RequestMapping("/api/Game/")
 
 public class GamesController {
