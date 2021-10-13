@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.reto3.sa.practica</groupId>
-	<artifactId>reto3grupo01g8</artifactId>
+	<artifactId>reto3grupo05g8</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>reto3grupo01g8</name>
+	<name>reto3grupo05g8</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
