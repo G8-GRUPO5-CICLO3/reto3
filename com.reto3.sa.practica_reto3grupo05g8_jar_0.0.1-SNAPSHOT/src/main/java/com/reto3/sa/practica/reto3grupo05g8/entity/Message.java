@@ -5,6 +5,7 @@
  */
 package com.reto3.sa.practica.reto3grupo05g8.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,27 +35,14 @@ public class Message {
     private int idMessage;
     private  String messageText;
     
-     /*   
-     @ManyToOne
-     @JoinColumn(name="gamesId")
-     //@JsonIgnoreProperties({"message","reservations"})
-     private Games games;
-     
-  
-     @ManyToOne
-     @JoinColumn(name="clientidClient")
-     @JsonIgnoreProperties({"messages","reservations"})
-     private Clientes clientes;
-     */
-    
     @ManyToOne
     @JoinColumn(name="clientIdClient")
-    //@JsonIgnoreProperties("message")
-    //@JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Clientes client;
     
     @ManyToOne
     @JoinColumn(name="gamesId")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Games games;
     
 }
