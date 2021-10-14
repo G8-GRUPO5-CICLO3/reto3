@@ -19,13 +19,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ScoreService {
     @Autowired
-    private ScoreRepository repo;
-    
-    public List<Score> listScore(){
-        return repo.findAll();
+    private ScoreRepository repository;
+
+    public Score saveScoreAll(Score score){
+        return repository.save(score);
     }
-    
-    public Score insertScore(Score score){
-        return repo.save(score);
+
+    public List<Score> getScoreAll(){
+        return repository.findAll();
     }
 }

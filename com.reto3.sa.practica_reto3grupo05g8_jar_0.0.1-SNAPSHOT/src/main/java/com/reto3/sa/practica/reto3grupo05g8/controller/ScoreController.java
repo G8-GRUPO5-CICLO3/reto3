@@ -29,13 +29,13 @@ public class ScoreController {
     private ScoreService service;
     
     @GetMapping("/all")
-    public List<Score> getScore(){
-        return service.listScore();
+    public List<Score> findAllScore(){
+        return service.getScoreAll();
     }
     
     @PostMapping("/save")
-    public ResponseEntity addGames(@RequestBody Score score){
-        service.insertScore(score);
+    public ResponseEntity addScore(@RequestBody Score score){
+        service.saveScoreAll(score);
         return ResponseEntity.status(201).build();
     }
 }
