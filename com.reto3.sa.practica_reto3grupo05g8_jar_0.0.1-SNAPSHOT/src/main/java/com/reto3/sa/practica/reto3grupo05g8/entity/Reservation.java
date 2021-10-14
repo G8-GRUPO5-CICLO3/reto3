@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="reservations")
+@Table(name="reservation")
 public class Reservation{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
