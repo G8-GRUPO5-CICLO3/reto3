@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grupo 8
  */
 
-@RestController ("GamesController")
+@RestController 
 @RequestMapping("/api/Game/")
 
 public class GamesController {

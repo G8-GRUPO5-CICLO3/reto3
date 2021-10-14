@@ -18,6 +18,10 @@ public class GamesService {
     @Autowired
     private GamesRepository repo;
     
+    public Games insertGames(Games game){
+        return repo.save(game);
+    }
+    
     public List<Games> listGame(){
         return repo.findAll();
     }
@@ -26,9 +30,7 @@ public class GamesService {
         return repo.findById(game.getId()).orElse(null);
     }
     
-    public Games insertGames(Games game){
-        return repo.save(game);
-    }
+    
       
     public Games updtGames(Games game){
         Games checkIfExist = repo.findById(game.getId()).orElse(null);
