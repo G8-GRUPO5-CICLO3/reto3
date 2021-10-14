@@ -40,7 +40,7 @@ public class ReservationService {
     // updt 
     public Reservation updateReservation(Reservation reservation){
         Reservation checkIfExist = repo.findById(reservation.getId()).orElse(null);
-        checkIfExist.setGames(reservation.getGames());
+        checkIfExist.setGame(reservation.getGame());
         checkIfExist.setClient        (reservation.getClient());
         checkIfExist.setStartDate(reservation.getStartDate());
         checkIfExist.setDevolutionDate(reservation.getDevolutionDate());  

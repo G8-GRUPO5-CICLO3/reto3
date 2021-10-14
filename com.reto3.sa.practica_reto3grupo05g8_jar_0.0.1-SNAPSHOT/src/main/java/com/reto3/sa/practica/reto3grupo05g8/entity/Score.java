@@ -32,6 +32,6 @@ public class Score implements Serializable{
     
     @OneToOne
     @JsonIgnoreProperties("score")
-    private Reservation reservation;
+    private Reservation reservations;
 
 }
