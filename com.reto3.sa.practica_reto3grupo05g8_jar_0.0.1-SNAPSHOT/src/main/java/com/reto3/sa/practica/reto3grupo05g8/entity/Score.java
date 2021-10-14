@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
  * @author Grupo8
  */
         
-/*
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,4 +35,3 @@ public class Score implements Serializable{
     private Reservation reservation;
 
 }
-*/

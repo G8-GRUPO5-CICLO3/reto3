@@ -1,42 +1,31 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package com.reto3.sa.practica.reto3grupo05g8.service;
 
-//import com.reto3.sa.practica.reto3grupo05g8.entity.Score;
-//import com.reto3.sa.practica.reto3grupo05g8.repository.ScoreRepository;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Score;
+import com.reto3.sa.practica.reto3grupo05g8.repository.ScoreRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Acer
+ * @author Daniel
  */
-/*
+
 @Service
 public class ScoreService {
     @Autowired
-    private ScoreRepository repository;
-
-    public Score saveScoreAll(Score score){
-        return repository.save(score);
+    private ScoreRepository repo;
+    
+    public List<Score> listScore(){
+        return repo.findAll();
     }
-
-    public List<Score> getScoreAll(){
-        return repository.findAll();
-    }
-
-    /*public Score updateScore(Score score){
-        Score existeScore=repository.findById(score.getId()).orElse(null);
-        existeScore.setCalificacion(score.getCalificacion());
-        return repository.save(existeScore);
-    }
-
-    public String deleteScore(int id){
-        repository.deleteById(id);
-        return "Item Removido"+id;
+    
+    public Score insertScore(Score score){
+        return repo.save(score);
     }
 }
-*/
