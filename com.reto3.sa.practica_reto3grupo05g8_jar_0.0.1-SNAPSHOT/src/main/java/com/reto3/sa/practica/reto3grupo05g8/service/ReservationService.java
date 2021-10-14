@@ -19,20 +19,23 @@ public class ReservationService {
     @Autowired
     private ReservationRepository repo;
     
+    public Reservation insertReservation(Reservation reservation){
+        return repo.save(reservation);
+    }
+    
     // mostrar todos 
     public List<Reservation> listReservation(){
         return repo.findAll();
     }
     
     // mostrar  por id
+    /*
     public Reservation listReservationById(Reservation reservation){
         return repo.findById(reservation.getId()).orElse(null);
     }
-    
+    */
     // insert 
-    public Reservation insertReservation(Reservation reservation){
-        return repo.save(reservation);
-    }
+    
     
     // updt 
     public Reservation updateReservation(Reservation reservation){

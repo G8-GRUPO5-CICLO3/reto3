@@ -35,17 +35,17 @@ public class Reservation{
     private String status="created";
     
     @ManyToOne
-    @JoinColumn(name = "games_id")
+    @JoinColumn(name = "game_id")
     @JsonIgnoreProperties("reservations")
-    private Game games;
+    private Game game;
     
     @ManyToOne
-    @JoinColumn(name = "client_idClient")
+    @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"reservations","message"})
     private Client client;
-    /*
+    
     @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservations")
     @JsonIgnoreProperties("reservations")
     private Score score;
-    */
+    
 }
