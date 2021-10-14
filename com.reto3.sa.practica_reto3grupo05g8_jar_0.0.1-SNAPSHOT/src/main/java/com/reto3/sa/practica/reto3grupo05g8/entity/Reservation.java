@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 public class Reservation{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idReservation;
     private Calendar startDate;
     private Calendar devolutionDate;
     private String status="created";
