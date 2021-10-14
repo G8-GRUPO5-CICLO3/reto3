@@ -46,9 +46,9 @@ public class Game implements Serializable{
 
     @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "game")
     @JsonIgnoreProperties({"game","client"})
-    public List<Message> messages;
+    private List<Message> messages;
     
     @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "game")
     @JsonIgnoreProperties({"game","message"})
-    public List<Reservation> reservations;
+    private List<Reservation> reservations;
 }
