@@ -25,7 +25,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Table(name="client")
-
+// cambio en la clase, primero va el email
 public class Client implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
