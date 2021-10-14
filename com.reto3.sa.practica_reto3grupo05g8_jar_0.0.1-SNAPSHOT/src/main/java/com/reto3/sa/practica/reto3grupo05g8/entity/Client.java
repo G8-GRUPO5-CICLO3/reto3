@@ -26,20 +26,20 @@ import java.io.Serializable;
 @Entity
 @Table(name="client")
 
-public class Clientes implements Serializable{
+public class Client implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idClient;
-    private String name;
     private String email;
+    private String name;
     private String password;
     private int age;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "client")
     @JsonIgnoreProperties("client")
     public List<Message> messages;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "client")
     @JsonIgnoreProperties("client")
     public List<Reservation> reservations;   
 }

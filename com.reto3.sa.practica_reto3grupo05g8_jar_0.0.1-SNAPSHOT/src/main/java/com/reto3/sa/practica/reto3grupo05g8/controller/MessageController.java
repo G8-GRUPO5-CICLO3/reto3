@@ -6,7 +6,7 @@
 
 package com.reto3.sa.practica.reto3grupo05g8.controller;
 
-import com.reto3.sa.practica.reto3grupo05g8.entity.Clientes;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Client;
 import com.reto3.sa.practica.reto3grupo05g8.entity.Message;
 import com.reto3.sa.practica.reto3grupo05g8.service.MessageService;
 import java.util.List;

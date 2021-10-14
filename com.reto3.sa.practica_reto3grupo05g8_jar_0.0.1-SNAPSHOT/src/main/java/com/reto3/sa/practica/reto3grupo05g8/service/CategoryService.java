@@ -2,13 +2,13 @@
 package com.reto3.sa.practica.reto3grupo05g8.service;
 
 import com.reto3.sa.practica.reto3grupo05g8.entity.Category;
-import com.reto3.sa.practica.reto3grupo05g8.entity.Clientes;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Client;
 import com.reto3.sa.practica.reto3grupo05g8.repository.CategoryRepository;
-import com.reto3.sa.practica.reto3grupo05g8.repository.ClientesRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.reto3.sa.practica.reto3grupo05g8.repository.ClientRepository;
 
 /**
  *

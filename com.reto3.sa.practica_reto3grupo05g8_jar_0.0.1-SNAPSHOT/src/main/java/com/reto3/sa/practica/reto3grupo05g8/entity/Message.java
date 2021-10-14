@@ -39,12 +39,12 @@ public class Message implements Serializable{
     @ManyToOne
     @JoinColumn(name="games_Id")
     @JsonIgnoreProperties({"messages","reservations"})
-    private Games games;
+    private Game games;
     
     @ManyToOne
     @JoinColumn(name="client_idClient")
     @JsonIgnoreProperties({"messages","reservations"})
-    private Clientes client;
+    private Client client;
     
     
     

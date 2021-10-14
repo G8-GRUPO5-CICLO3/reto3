@@ -6,9 +6,9 @@
 
 package com.reto3.sa.practica.reto3grupo05g8.controller;
 import com.reto3.sa.practica.reto3grupo05g8.entity.Category;
-import com.reto3.sa.practica.reto3grupo05g8.entity.Clientes;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Client;
 import com.reto3.sa.practica.reto3grupo05g8.service.CategoryService;
-import com.reto3.sa.practica.reto3grupo05g8.service.ClientesService;
+import com.reto3.sa.practica.reto3grupo05g8.service.ClientService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

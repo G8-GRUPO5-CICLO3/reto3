@@ -5,11 +5,11 @@
  */
 package com.reto3.sa.practica.reto3grupo05g8.service;
 
-import com.reto3.sa.practica.reto3grupo05g8.entity.Clientes;
-import com.reto3.sa.practica.reto3grupo05g8.repository.ClientesRepository;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Client;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.reto3.sa.practica.reto3grupo05g8.repository.ClientRepository;
 
 /**
  *
@@ -17,29 +17,29 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class ClientesService {
+public class ClientService {
     
     @Autowired
-    private ClientesRepository repo;
+    private ClientRepository repo;
     
     // mostrar todos los clientes
-    public List<Clientes> listClient(){
+    public List<Client> listClient(){
         return repo.findAll();
     }
     
     // mostrar cliente por id
-    public Clientes listClientById(Clientes cliente){
+    public Client listClientById(Client cliente){
         return repo.findById(cliente.getIdClient()).orElse(null);
     }
     
     // insert cliente
-    public Clientes insertClient(Clientes cliente){
+    public Client insertClient(Client cliente){
         return repo.save(cliente);
     }
     
     // updt cliente
-    public Clientes updtCliente(Clientes cliente){
-        Clientes checkIfExist = repo.findById(cliente.getIdClient()).orElse(null);
+    public Client updtCliente(Client cliente){
+        Client checkIfExist = repo.findById(cliente.getIdClient()).orElse(null);
         
         checkIfExist.setName(cliente.getName());
         checkIfExist.setEmail(cliente.getEmail());

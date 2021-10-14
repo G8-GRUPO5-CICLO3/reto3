@@ -1,10 +1,10 @@
 package com.reto3.sa.practica.reto3grupo05g8.service;
 
-import com.reto3.sa.practica.reto3grupo05g8.entity.Games;
-import com.reto3.sa.practica.reto3grupo05g8.repository.GamesRepository;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Game;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.reto3.sa.practica.reto3grupo05g8.repository.GameRepository;
 
 /**
  *
@@ -12,26 +12,26 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class GamesService {
+public class GameService {
     
   
     @Autowired
-    private GamesRepository repo;
+    private GameRepository repo;
     
-    public List<Games> listGame(){
+    public List<Game> listGame(){
         return repo.findAll();
     }
     
-    public Games listGameById(Games game){
+    public Game listGameById(Game game){
         return repo.findById(game.getId()).orElse(null);
     }
     
-    public Games insertGames(Games game){
+    public Game insertGames(Game game){
         return repo.save(game);
     }
       
-    public Games updtGames(Games game){
-        Games checkIfExist = repo.findById(game.getId()).orElse(null);
+    public Game updtGames(Game game){
+        Game checkIfExist = repo.findById(game.getId()).orElse(null);
         checkIfExist.setDeveloper   (game.getDeveloper());
         checkIfExist.setYear        (game.getYear());
         checkIfExist.setName        (game.getName());  

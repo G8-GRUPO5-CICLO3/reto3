@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.reto3.sa.practica.reto3grupo05g8.controller;
-import com.reto3.sa.practica.reto3grupo05g8.entity.Games;
-import com.reto3.sa.practica.reto3grupo05g8.service.GamesService;
+
+import com.reto3.sa.practica.reto3grupo05g8.entity.Client;
+import com.reto3.sa.practica.reto3grupo05g8.service.ClientService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,38 +19,35 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grupo 8
  */
 
-@RestController ("GamesController")
-@RequestMapping("/api/Game/")
+@RestController //("ClientesController")
+@RequestMapping ("/api/Client/")
 
-public class GamesController {
-   
+public class ClientController {
+    
     @Autowired
-    private GamesService service;
+    private ClientService service;
     
     @GetMapping("/all")
-    public List<Games> getGames(){
-        return service.listGame();
+    public List<Client> getClientes(){
+        return service.listClient();
     }
     
     @PostMapping("/save")
-    public ResponseEntity addGames(@RequestBody Games game){
-        service.insertGames(game);
+    public ResponseEntity addClientes(@RequestBody Client client){
+        service.insertClient(client);
         return ResponseEntity.status(201).build();
     }
-         
+    /*
     @PutMapping("/update")
-    public ResponseEntity updateGames(@RequestBody Games game){
-        service.updtGames(game);
+    public ResponseEntity updateClientes(@RequestBody Clientes cliente){
+        service.updtCliente(cliente);
         return ResponseEntity.status(201).build();
     }
-  
-  
+    
     @DeleteMapping("/delete")
-    public ResponseEntity deleteGames(@RequestBody Games game){
-        service.delGames(game.getId());
+    public ResponseEntity deleteClientes(@RequestBody Clientes cliente){
+        service.delCliente(cliente.getIdClient());
         return ResponseEntity.status(204).build();
     }
-     
-
-
+    */
 }

@@ -5,13 +5,13 @@
  */
 package com.reto3.sa.practica.reto3grupo05g8.repository;
 
-import com.reto3.sa.practica.reto3grupo05g8.entity.Clientes;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Daniel
  */
-public interface ClientesRepository extends JpaRepository<Clientes, Integer>{
+public interface ClientRepository extends JpaRepository<Client, Integer>{
     
 }

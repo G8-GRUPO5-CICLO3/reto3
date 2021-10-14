@@ -5,7 +5,7 @@
  */
 package com.reto3.sa.practica.reto3grupo05g8.repository;
 
-import com.reto3.sa.practica.reto3grupo05g8.entity.Games;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Game;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Grupo 8
  * Repositorio
  */
-public interface GamesRepository extends JpaRepository<Games, Integer>{
+public interface GameRepository extends JpaRepository<Game, Integer>{
     
 }
