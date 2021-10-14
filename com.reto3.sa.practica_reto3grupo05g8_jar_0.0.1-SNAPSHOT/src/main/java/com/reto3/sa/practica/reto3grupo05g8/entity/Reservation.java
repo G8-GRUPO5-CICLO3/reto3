@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="reservations")
+@Table(name="reservation")
 public class Reservation{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,11 +41,11 @@ public class Reservation{
     
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties({"reservations","message"})
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
     
-    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservations")
-    @JsonIgnoreProperties("reservations")
+    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservation")
+    @JsonIgnoreProperties("reservation")
     private Score score;
     
 }
