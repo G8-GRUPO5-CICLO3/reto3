@@ -8,13 +8,7 @@ import com.reto3.sa.practica.reto3grupo05g8.service.GameService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -46,13 +40,18 @@ public class GameController {
         return ResponseEntity.status(201).build();
     }
   
-  
+    /*
     @DeleteMapping("/delete")
     public ResponseEntity deleteGames(@RequestBody Game game){
         service.delGames(game.getId());
         return ResponseEntity.status(204).build();
     }
-     
+    */
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteCargo(@PathVariable int id){
+        service.delGames(id);
+        return ResponseEntity.status(204).build();
+    }
 
 }

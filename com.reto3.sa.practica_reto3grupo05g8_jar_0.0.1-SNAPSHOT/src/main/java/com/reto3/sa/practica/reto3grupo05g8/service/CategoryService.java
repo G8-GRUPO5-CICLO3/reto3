@@ -40,8 +40,8 @@ public class CategoryService {
         return repo.save(checkIfExist);
     }
  
-    public String delCategory(int id){
+    public void delCategory(int id){
         repo.deleteById(id);
-        return "La categoría número " + id + " se ha eliminado";
+
     }
 }

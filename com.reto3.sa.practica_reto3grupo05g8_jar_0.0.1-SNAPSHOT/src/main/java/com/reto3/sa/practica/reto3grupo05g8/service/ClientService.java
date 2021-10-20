@@ -50,9 +50,7 @@ public class ClientService {
     }
     
     // eliminar cliente
-    public String delCliente(int id){
+    public void delCliente(int id){
         repo.deleteById(id);
-        
-        return "El cliente número " + id + " se ha eliminado";
     }
 }

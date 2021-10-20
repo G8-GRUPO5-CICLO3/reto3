@@ -39,10 +39,8 @@ public class GameService {
         return repo.save(checkIfExist);
     }
     
-    public String delGames(int id){
+    public void delGames(int id){
         repo.deleteById(id);
-        
-        return "El Juego número " + id + " se ha eliminado";
     }
 
 }

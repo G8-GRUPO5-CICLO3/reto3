@@ -56,10 +56,16 @@ public class CategoryController {
         service.updtCategory(category);
         return ResponseEntity.status(201).build();
     }
-    
+    /*
     @DeleteMapping("/delete")
     public ResponseEntity deleteCategory(@RequestBody Category category){
         service.delCategory(category.getId());
+        return ResponseEntity.status(204).build();
+    }
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteCargo(@PathVariable int id){
+        service.delCategory(id);
         return ResponseEntity.status(204).build();
     }
 }
