@@ -64,7 +64,7 @@ public class CategoryController {
     }
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteCargo(@PathVariable int id){
+    public ResponseEntity delCategory(@PathVariable int id){
         service.delCategory(id);
         return ResponseEntity.status(204).build();
     }

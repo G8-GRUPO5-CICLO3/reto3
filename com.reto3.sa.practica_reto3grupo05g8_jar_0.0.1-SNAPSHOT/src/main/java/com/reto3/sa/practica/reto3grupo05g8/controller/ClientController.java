@@ -46,7 +46,7 @@ public class ClientController {
     */
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteCargo(@PathVariable int id){
+    public ResponseEntity delCliente(@PathVariable int id){
         service.delCliente(id);
         return ResponseEntity.status(204).build();
     }

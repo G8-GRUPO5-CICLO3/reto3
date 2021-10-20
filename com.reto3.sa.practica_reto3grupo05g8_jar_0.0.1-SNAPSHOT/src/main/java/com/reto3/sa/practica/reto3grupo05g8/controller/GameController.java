@@ -49,7 +49,7 @@ public class GameController {
     */
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteCargo(@PathVariable int id){
+    public ResponseEntity delGames(@PathVariable int id){
         service.delGames(id);
         return ResponseEntity.status(204).build();
     }
