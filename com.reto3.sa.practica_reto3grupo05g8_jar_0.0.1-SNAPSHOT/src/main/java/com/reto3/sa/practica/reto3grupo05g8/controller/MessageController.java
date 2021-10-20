@@ -7,6 +7,7 @@
 package com.reto3.sa.practica.reto3grupo05g8.controller;
 
 import com.reto3.sa.practica.reto3grupo05g8.entity.Client;
+import com.reto3.sa.practica.reto3grupo05g8.entity.Game;
 import com.reto3.sa.practica.reto3grupo05g8.entity.Message;
 import com.reto3.sa.practica.reto3grupo05g8.service.MessageService;
 import java.util.List;
@@ -44,5 +45,20 @@ public class MessageController {
         service.saveMessage(message);
         return ResponseEntity.status(201).build();
     }
+
+    @PutMapping("/update")
+    public ResponseEntity updateMessage(@RequestBody Message message){
+        service.updateMessage(message);
+        return ResponseEntity.status(201).build();
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity deleteMessage(@RequestBody Message message){
+        service.deleteMessage(message.getIdMessage());
+        return ResponseEntity.status(204).build();
+    }
+
+
+
     
 }

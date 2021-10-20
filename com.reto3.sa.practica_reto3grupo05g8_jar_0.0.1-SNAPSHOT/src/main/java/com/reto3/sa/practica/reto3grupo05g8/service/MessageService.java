@@ -5,6 +5,7 @@
  */
 package com.reto3.sa.practica.reto3grupo05g8.service;
 
+import com.reto3.sa.practica.reto3grupo05g8.entity.Game;
 import com.reto3.sa.practica.reto3grupo05g8.entity.Message;
 import com.reto3.sa.practica.reto3grupo05g8.repository.MessageRepository;
 import java.util.List;

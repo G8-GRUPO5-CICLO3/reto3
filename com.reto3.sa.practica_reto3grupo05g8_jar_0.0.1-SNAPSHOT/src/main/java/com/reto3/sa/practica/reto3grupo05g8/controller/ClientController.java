@@ -37,17 +37,17 @@ public class ClientController {
         service.insertClient(client);
         return ResponseEntity.status(201).build();
     }
-    /*
+
     @PutMapping("/update")
-    public ResponseEntity updateClientes(@RequestBody Clientes cliente){
+    public ResponseEntity updateClientes(@RequestBody Client cliente){
         service.updtCliente(cliente);
         return ResponseEntity.status(201).build();
     }
     
     @DeleteMapping("/delete")
-    public ResponseEntity deleteClientes(@RequestBody Clientes cliente){
+    public ResponseEntity deleteClientes(@RequestBody Client cliente){
         service.delCliente(cliente.getIdClient());
         return ResponseEntity.status(204).build();
     }
-    */
+
 }
